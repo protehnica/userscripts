@@ -21,14 +21,13 @@ function not_scheduled(a_node) {
     return a_node
         .closest('#dismissible')
         .querySelector('#buttons')
-        .childNodes
-        .length === 0;
+        .childNodes.length === 0;
 }
 
 function generate_list() {
     const new_window = window.open();
 
-    Array.from(document.querySelectorAll("#video-title"))
+    Array.from(document.querySelectorAll('#video-title'))
         .filter(not_scheduled)
         .map(({href}) => href)
         .filter(is_url)
